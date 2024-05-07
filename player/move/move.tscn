@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx5gjra84ktlb"]
+
+[ext_resource type="Script" path="res://modules/player/move/move.gd" id="1_vpq5j"]
+
+[node name="move" type="Node3D"]
+script = ExtResource("1_vpq5j")
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="head"]
+
+[node name="RayCast3D" type="RayCast3D" parent="head"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+target_position = Vector3(0, 0, 5)
+debug_shape_custom_color = Color(0.624751, 0.531096, 0, 1)
+debug_shape_thickness = 5
+
+[node name="CSGBox3D" type="CSGBox3D" parent="head/RayCast3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+size = Vector3(0.1, 0.1, 0.1)
